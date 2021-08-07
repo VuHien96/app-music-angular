@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12" style="margin-top:20px">
+            <form class="register" [formGroup]="registerForm">
+                <mat-card style="margin: 50px 0">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Họ & tên</mat-label>
+                        <input matInput placeholder="Nhập họ tên" formControlName="fullName">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="registerForm.controls.fullName.invalid">
+                            {{ getErrorMessage(registerForm.controls.fullName) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Nhập email" formControlName="email">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="registerForm.controls.email.invalid">
+                            {{ getErrorMessage(registerForm.controls.email) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Số điện thoại</mat-label>
+                        <input matInput placeholder="Nhập số điện thoại" formControlName="phone">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="registerForm.controls.phone.invalid">
+                            {{ getErrorMessage(registerForm.controls.phone) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mật khẩu</mat-label>
+                        <input matInput type="password" placeholder="Nhập mật khẩu" formControlName="password">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="registerForm.controls.password.invalid">
+                            {{ getErrorMessage(registerForm.controls.password) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nhập lại khẩu</mat-label>
+                        <input matInput type="password" placeholder="Nhập lại mật khẩu" formControlName="confirmPassword">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="registerForm.controls.confirmPassword.invalid">
+                            {{ getErrorMessage(registerForm.controls.confirmPassword) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" (click)="signup()">Đăng ký</button>
+                        <button mat-raised-button color="accent" routerLink="/login">Đăng nhập</button>
+                    </div>
+                </mat-card>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12" style="margin-top:20px">
+            <form class="register" [formGroup]="loginForm">
+                <mat-card style="margin: 50px 0">
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Nhập email" formControlName="email">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="loginForm.controls.email.invalid">
+                            {{ getErrorMessage(loginForm.controls.email) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mật khẩu</mat-label>
+                        <input matInput type="password" placeholder="Nhập mật khẩu" formControlName="password">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-error *ngIf="loginForm.controls.password.invalid">
+                            {{ getErrorMessage(loginForm.controls.password) }}
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+                    <br>
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" routerLink="/register" >Đăng ký</button>
+                        <button mat-raised-button color="accent" (click)="signin()">Đăng nhập</button>
+                    </div>
+                    <div class="login-failed" *ngIf='this.isError'>
+                        <p class="login-failed-text">Login Failed. Please check your credentials and try again.</p>
+                    </div>
+                    <div class="login-failed" [ngStyle]="{'background-color': 'green'}" *ngIf="this.registerSuccessMessage.length > 0">
+                        <p class="register-success-text">{{registerSuccessMessage}}</p>
+                    </div>
+                </mat-card>
+            </form>
+        </div>
+    </div>
+</div>

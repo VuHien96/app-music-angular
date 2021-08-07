@@ -1,0 +1,56 @@
+.register{
+  width: 400px;
+  margin: auto;
+}
+mat-form-field {
+  width: 100%;
+  padding-bottom: 5px;
+  border: 0;
+}
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 100%;
+  text-align: center;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.login-section{
+  margin: 100px;
+}
+
+.login-failed, .register-success{
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  width: 65%;
+  background-color: red;
+}
+
+.login-failed-text, .register-success-text{
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+  color: aliceblue;
+}
